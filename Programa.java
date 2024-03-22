@@ -1,44 +1,47 @@
-
 public class Programa {
 
     public static void main(String[] args) {
 
-        String texto1 = "100";
-        String texto2 = "50";
-        // Concatenação
-        String txtFinal = texto1 + texto2;
-        System.out.println("texto: " + txtFinal);
+        int numero = 100;
+        String numTexto = String.valueOf(numero);
+        char primeiraLetra = numTexto.charAt(0);
+        // System.out.println("Letra: " + primeiraLetra);
 
-        // Parsear (converter)
-        int numero1 = Integer.parseInt(texto1);
-        int numero2 = Integer.parseInt(texto2);
-        int resultado = Calculadora.somar(numero1, numero2);
-        System.out.println("Resultado" + resultado);
+        char[] texto1 = { 'P', 'r', 'o', 'g', 'r', 'a', 'm', 'a' };
+        for (int i = 0; i < texto1.length; i++) {
+            char letra = texto1[i];
+            // System.out.println(letra);
+        }
+        String texto2 = "Programa Java";
 
-        // Doubles
-        double variavel = 10.60;
-        Double objeto = 10.50;
-        int inteiro = objeto.intValue();
+        // System.out.println(texto2); // Normal
+        // System.out.println(texto2.toUpperCase()); // Maiúsculas
+        // System.out.println(texto2.substring(0, 10)); // Recorte
+        // System.out.println(texto2.charAt(10)); // Apenas uma letra
 
-        // Objetos do tipo bike
-        Bike objetoMinhaBike = new Bike();
-        objetoMinhaBike.marca = "Caloi";
-        objetoMinhaBike.alterarMarcha(3);
+        String[] palavras = texto2.split(" ");
+        String palavra1 = palavras[0];
+        String palavra2 = palavras[1];
 
-        Bike objetoSuaBike = new Bike();
-        objetoSuaBike.marca = "Oggi";
-        objetoSuaBike.alterarMarcha(3);
+        // System.out.println(palavra1); // Programação
+        // System.out.println(palavra2); // Java
 
-        System.out.println("Minha bike marca " + objetoMinhaBike.marca);
-        System.out.println("Minha bike marca " + objetoMinhaBike.marchaAtual);
+        //Dados de conta bancárias
+        //Nome;CPF;Saldo
+        String[] registros = {"Fog;666;0,5", "Annwe;6969;20"};
 
-        System.out.println();
+        for(int i = 0; i < registros.length; i++){
+            String linha = registros[i];
+            String[] dados = linha.split(";"); 
+            String nome = dados[0];
+            String cpf = dados[1];
+            double saldo = Double.parseDouble(dados[2]);
+            double total += saldo;
+            System.out.println("Nome:" + nome + " Saldo: " + saldo);
 
-        System.out.println("Minha bike marca " + objetoSuaBike.marca);
-        System.out.println("Minha bike marca " + objetoSuaBike.marchaAtual);
-
-        // Bike.marca = "Caloi";
-        // Bike.marchaAtual = 3;
+        }
+        System.out.println("total " + total);
 
     }
+
 }
